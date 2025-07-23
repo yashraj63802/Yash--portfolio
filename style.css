@@ -1,0 +1,63 @@
+/* Base & Colors */
+:root {
+  --bg: #0a0a0f;
+  --fg: #e0e0e0;
+  --highlight: #8e44ad;
+  --card-bg: #1f1f2a;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: 'Segoe UI', sans-serif; line-height: 1.6; }
+
+/* Navigation */
+.nav {
+  position: sticky; top: 0; background: rgba(10,10,15,0.8);
+  display: flex; justify-content: center; gap: 2rem; padding: 1rem 0;
+  backdrop-filter: blur(6px);
+}
+.nav__item {
+  color: var(--fg); text-decoration: none; font-weight: bold;
+  position: relative; transition: color .3s;
+}
+.nav__item:hover,
+.nav__item.active { color: var(--highlight); }
+.nav__item.active::after {
+  content: ""; position: absolute; height: 3px; width: 100%;
+  background: var(--highlight); bottom: -5px; left: 0;
+}
+
+/* Sections */
+section { max-width: 800px; margin: 4rem auto; padding: 0 1rem; }
+.hero { text-align: center; padding-top: 4rem; }
+.hero .highlight { color: var(--highlight); }
+.about, .projects, .contact { }
+
+/* Projects Grid */
+.grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 1.5rem; margin-top: 2rem;
+}
+.card {
+  background: var(--card-bg); padding: 1.5rem; border-radius: 12px;
+  transition: transform .3s, background .3s;
+}
+.card:hover {
+  transform: translateY(-8px);
+  background: var(--highlight);
+  color: #fff;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block; margin-top: 1rem; padding: 0.75rem 1.5rem;
+  background: var(--highlight); color: #fff; border-radius: 8px;
+  text-decoration: none; transition: background .3s;
+}
+.btn:hover { background: #6f337a; }
+
+/* Headings & Text */
+h1, h2 { margin-bottom: 1rem; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+
+/* Footer (optional if you want one) */
+/* footer { text-align: center; padding: 2rem 0; font-size: 0.9rem; } */
